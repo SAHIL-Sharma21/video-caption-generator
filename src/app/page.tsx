@@ -1,21 +1,50 @@
 'use client'
 
 import { VideoUrlInput } from "./components/VideoUrlInput";
+import CaptionInput from './components/CaptionInput';
+import VideoPlayer from './components/VideoPlayer'
+import { useState } from "react";
 
 
-export default function Home() {
+interface Caption {
+  text: string;
+  startTime: number;
+  endTime: number;
+}
+
+const Home = () => {
+
+  const [videoUrl, setVideoUrl] = useState<string>('');
+  const [captions, setCaptions] = useState<Caption[]>([]);
 
 
-  const handleChange = () => {
-    console.log("url here!");
+  const handleUrlChange = (url: string) => {
+    setVideoUrl(url);
+    setCaptions([]);
+  }
+
+  const handleCaptionAdd = (caption: Caption) => {
+    setCaptions([...captions, caption]);
   }
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <VideoUrlInput onUrlChange={handleChange}/>
+    <main className="bg-gray-900 min-h-screen flex flex-col items-center justify-center p-24">
+      <div className="w-full max-w-5xl">
+        <h1 className="text-2xl font-semibold text-white text-center mb-8">Video Caption Tool</h1>
+        <div className="flex flex-col items-center">
+          <VideoUrlInput onUrlChange={handleUrlChange} />
+          {videoUrl && (
+            <>
+              <CaptionInput onCaptionAdd={handleCaptionAdd} />
+              <div className="flex justify-center w-full">
+                <VideoPlayer url={videoUrl} captions={captions} />
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </main>
   );
 }
+export default Home;
