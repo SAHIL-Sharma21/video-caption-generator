@@ -29,8 +29,24 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## How to Use
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Enter Video URL: Copy and paste a video URL into the input field. Here are some sample video URLs you can use:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Sample Video 1: https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4
+- Sample Video 2: http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4
+- Sample Video 3: https://media.w3.org/2010/05/sintel/trailer.mp4
+
+Add Captions: After entering a video URL, you can add captions with start and end times. Use the input fields to enter the caption text and specify the start and end times in seconds. Click "Add Caption" to add the caption.
+
+Here are some sample captions you can use:
+
+- Caption 1:
+  Caption: "Welcome to the video."
+  Start Time: 0
+  End Time: 5
+
+- Caption 2:
+  Text: "Thank you for watching!"
+  Start Time: 20
+  End Time: 25
