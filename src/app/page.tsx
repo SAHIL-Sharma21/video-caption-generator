@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <main className="bg-gray-900 min-h-screen flex flex-col items-center justify-center p-24">
       <div className="w-full max-w-5xl">
-        <h1 className="text-2xl font-semibold text-white text-center mb-8">Video Caption Tool</h1>
+        <h1 className="text-4xl font-semibold text-white text-center mb-8">Video Caption Tool</h1>
         <div className="flex flex-col items-center">
           <VideoUrlInput onUrlChange={handleUrlChange} />
           {videoUrl && (

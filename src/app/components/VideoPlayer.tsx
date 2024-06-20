@@ -39,6 +39,12 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ url, captions }) => {
     }
   }, [captions, url]);
 
+  useEffect(() => {
+    if(videoRef.current){
+        videoRef.current.load();
+    }
+  }, [url]);
+
   return (
     <div>
       <div>
